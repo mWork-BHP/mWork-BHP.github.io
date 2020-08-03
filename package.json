@@ -7,7 +7,7 @@
     "start": "gulp",
     "server": "gulp server",
     "watch": "gulp watch",
-    "build": "react-scripts build",
+    "build": "gulp build",
 	"predeploy": "npm run build",
 	"deploy": "gh-pages -d build"
   },
