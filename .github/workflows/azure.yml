@@ -15,10 +15,7 @@ jobs:
         
     - name: Install 
       run: npm install
-      
-    #- name: Fix 
-    #  run: npm audit fix 
-      
+        
     - name: Build 
       run: |
         npm install --save gh-pages
