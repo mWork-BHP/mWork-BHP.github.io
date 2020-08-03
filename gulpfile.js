@@ -58,7 +58,7 @@ gulp.task('server', function () {
 gulp.task('build',
     gulp.series(
         'clean',
-        gulp.parallel('html', 'images', 'styles', 'scripts'), // Parallel tasks
-        'server'
+        gulp.parallel('html', 'images', 'styles', 'scripts')//, // Parallel tasks
+       // 'server'
     )
 );
