@@ -19,10 +19,13 @@ jobs:
     - name: Build 
       run: npm run build
       
-    - name: Build and Deploy
+    - name: Echo 
+      run: ls
+      
+    - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
-        FOLDER: build
+        FOLDER: ./build
