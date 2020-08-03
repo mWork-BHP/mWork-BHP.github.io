@@ -17,7 +17,7 @@ jobs:
       run: npm install
               
     - name: Up 
-      run:npm install --save react react-dom react-scripts
+      run: npm install --save react react-dom react-scripts
       
     - name: Build 
       run: |
