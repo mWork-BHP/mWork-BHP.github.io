@@ -19,7 +19,7 @@ jobs:
     - name: Build 
       run: |
         npm install --save gh-pages
-        npm run build
+        npm run deploy
       
     - name: Echo 
       run: ls
