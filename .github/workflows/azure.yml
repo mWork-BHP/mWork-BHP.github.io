@@ -18,8 +18,8 @@ jobs:
       
     - name: Build 
       run: |
-      npm install --save gh-pages
-      npm run build
+        npm install --save gh-pages
+        npm run build
       
     - name: Echo 
       run: ls
