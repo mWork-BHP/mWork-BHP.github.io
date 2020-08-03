@@ -58,8 +58,13 @@ gulp.task('scripts', function() {
     }));
 });
 
-// Images
+// Moi them
+gulp.task('move-images', function() {
+    return gulp.src('src/images/**/*')
+        .pipe(gulp.dest('dest/images'))
+});
 
+// Images
 gulp.task('images', function() {
   return gulp.src('src/images/**/*')
     .pipe(cache(imagemin({
@@ -151,7 +156,8 @@ gulp.task('build', gulp.parallel(
   'html',
   'styles',
   'scripts',
-  'copy'
+  'copy',
+  'images'
 ));
 
 // Deploy
