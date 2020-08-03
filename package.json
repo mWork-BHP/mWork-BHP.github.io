@@ -9,17 +9,17 @@
     "scripts": {
         "build": "gulp build",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build"
+		"deploy": "npm -d build"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/vkovic/uikit-computer-store-template.git"
+        "url": "https://github.com/mworkvn/mwork.git"
     },
     "engines": {
         "node": ">=8.2"
     },
     "devDependencies": {
-	    "gulp": "^4.0.0",
+	"gulp": "^4.0.0",
         "gulp-autoprefixer": "^6.0.0",
         "gulp-clean": "^0.4.0",
         "gulp-include": "^2.3.1",
