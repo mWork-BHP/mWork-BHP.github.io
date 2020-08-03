@@ -4,10 +4,12 @@
     "description": "Computer store e-commerce template built with UIkIt, Sass and JS",
     "author": "Vladimir Ković",
     "license": "MIT",
-    "homepage": "https://github.com/vkovic/uikit-computer-store-template",
+    "homepage": "http://mworkvn.github.io/mWork",
     "main": "index.html",
     "scripts": {
-        "build": "gulp build"
+        "build": "gulp build",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
     },
     "repository": {
         "type": "git",
