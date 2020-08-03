@@ -15,10 +15,13 @@ jobs:
         
     - name: Install 
       run: npm install
-              
+      
+    - name: Fix 
+      run: npm audit fix 
+      
     - name: Up 
       run: npm install --save react react-dom react-scripts
-      
+
     - name: Build 
       run: |
         npm install --save gh-pages
