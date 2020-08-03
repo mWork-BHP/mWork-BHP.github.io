@@ -1,39 +1,26 @@
-name: github pages
+name: Deploy react app to GitHub Pages
 
 on:
-    push:
-        branches:
-        - master
-
+  push:
+    branches:
+      - master
 jobs:
-    deploy:
-        runs-on: ubuntu-18.04
-        steps:
-        - uses: actions/checkout@v2
+  build:
 
-        - name: Setup Node
-            uses: actions/setup-node@v2-beta
-            with:
-            node-version: '12'
+    runs-on: ubuntu-latest
 
-        - name: Get yarn cache
-            id: yarn-cache
-            run: echo "::set-output name=dir::$(yarn cache dir)"
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
 
-        - name: Cache dependencies
-            uses: actions/cache@v2
-            with:
-            path: ${{ steps.yarn-cache.outputs.dir }}
-            key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-            restore-keys: |
-                ${{ runner.os }}-yarn-
-        - run: yarn install --frozen-lockfile
-        - run: yarn build
-            env:
-            REACT_APP_GIT_SHA: ${{ github.SHA }}
-
-        - name: Deploy
-            uses: peaceiris/actions-gh-pages@v3
-            with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./build
+    - name: Build
+      run: |
+        npm install
+        npm run build
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: build
