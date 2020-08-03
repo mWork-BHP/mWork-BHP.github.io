@@ -12,12 +12,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-
+        
     - name: Install 
       run: npm install
       
     - name: Build 
-      run: npm run build
+      run: |
+      npm install --save gh-pages
+      npm run build
       
     - name: Echo 
       run: ls
